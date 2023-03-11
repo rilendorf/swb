@@ -69,6 +69,7 @@ func funcMake() {
 	fmt.Printf("Writing main index.html\n")
 	pandoc(path.Join(output, "index.html"),
 		path.Join(output, "index.tmp.md"),
+		"-T", conf.Title,
 		fmt.Sprintf("--template=%s", path.Join(templates, "pandoc.html")),
 		fmt.Sprintf("--lua-filter=%s", path.Join(templates, "filter.lua")),
 		"--css=/style.css",
@@ -114,6 +115,7 @@ func funcMake() {
 
 			pandoc(path.Join(output, entry.Path, name+".html"),
 				path.Join(input, entry.Path, file.Name()),
+				"-T", entry.Path+" - "+file.Name(),
 				fmt.Sprintf("--template=%s", path.Join(templates, "pandoc.html")),
 				fmt.Sprintf("--lua-filter=%s", path.Join(templates, "filter.lua")),
 				"--css=/style.css",

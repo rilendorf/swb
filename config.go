@@ -7,6 +7,8 @@ import (
 )
 
 type Config struct {
+	Title string `yaml:"title"`
+
 	Templates string `yaml:"templates"`
 	Output    string `yaml:"output"`
 	Input     string `yaml:"input"`
@@ -37,6 +39,7 @@ func writeDefaultConf(path string) *Config {
 		Templates: "templates/",
 		Output:    "out/",
 		Input:     "src/",
+		Title:     "samplename",
 	}
 	errorFatal("Error encoding config to "+path, dec.Encode(conf))
 
