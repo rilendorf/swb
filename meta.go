@@ -16,6 +16,7 @@ type Meta struct {
 func readMeta(path string) *Meta {
 	f, err := os.Open(path)
 	errorFatal("Error reading meta "+path, err)
+	defer f.Close()
 
 	dec := yaml.NewDecoder(f)
 
