@@ -10,7 +10,7 @@ It generates static .html files from .md files.
 
 1. install golang
 
-2. install swb `go install github.com/DerZombiiie/swb`
+2. install swb `go install github.com/rilendorf/swb`
 
 3. install pandoc so `apt install pandoc` or `pacman -Sy pandoc` or whatever is applicable for you
 

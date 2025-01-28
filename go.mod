@@ -1,4 +1,4 @@
-module github.com/DerZombiiie/swb
+module github.com/rilendorf/swb
 
 go 1.20
 
